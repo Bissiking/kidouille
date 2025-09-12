@@ -68,4 +68,15 @@ io.on('connection', (socket) => {
   });
 });
 
+// Healthcheck
+app.get('/health', (req, res) => {
+  res.json({
+    status: "opérationnel",
+    uptime: process.uptime(),
+    rooms: Object.keys(rooms).length,
+    players: Object.values(rooms).reduce((acc, r) => acc + r.players.length, 0)
+  });
+});
+
+
 server.listen(3000, () => console.log('🚀 Serveur lancé sur http://localhost:3000'));
