@@ -11,6 +11,12 @@
     <div class="container">
         <img src="img/logo.png" alt="Logo" width="150px">
         <h1>KiDouille ?</h1>
+        <div class="update-banner">
+            🎉 <strong>KiDouille V2 est sortie !</strong><br>
+            Nouveau <em>Algo Douille™</em> : encore plus précis, encore plus chaotique,<br>
+            et surtout… encore plus de douille pour tout le monde. 😈
+        </div>
+
         <p>Créer ou rejoindre une room pour savoir qui va douiller !</p>
 
         <input type="text" id="playerName" placeholder="👋 Ton prénom" />
@@ -27,11 +33,7 @@
             <span class="icon">🚀</span> Entrer dans la room
         </button>
     </div>
-
-    <div id="patchNotesLink" class="version-info" style="margin-bottom: 5px;">
-        <a href="https://mhemery.fr/kidouille" style="color: #6c757d; text-decoration: none;">🧾 Patch 8.3.1</a>
-    </div>
-
+    
     <div id="versionInfo" class="version-info"></div>
 
     <script>
@@ -52,17 +54,22 @@
         document.getElementById("versionInfo").textContent = appVersion;
     </script>
     <style>
-        /* Ajoutez ceci à votre style.css */
-.version-info a {
-    color: #6c757d; /* Couleur discrète (gris) */
-    text-decoration: none;
-    font-size: 0.85em; /* Petite taille pour rester discret */
-}
-
-.version-info a:hover {
-    color: #007bff; /* Un petit changement de couleur au survol */
-    text-decoration: underline;
-}
+        .update-banner {
+            background: #fff3cd;
+            color: #856404;
+            padding: 12px 18px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 0.9em;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </body>
 </html>
