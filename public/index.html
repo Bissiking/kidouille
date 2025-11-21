@@ -28,6 +28,10 @@
         </button>
     </div>
 
+    <div id="patchNotesLink" class="version-info" style="margin-bottom: 5px;">
+        <a href="https://mhemery.fr/kidouille" style="color: #6c757d; text-decoration: none;">🧾 Patch 8.3.1</a>
+    </div>
+
     <div id="versionInfo" class="version-info"></div>
 
     <script>
@@ -47,5 +51,18 @@
         const appVersion = "1.3 - La Douille Flamboyante"; 
         document.getElementById("versionInfo").textContent = appVersion;
     </script>
+    <style>
+        /* Ajoutez ceci à votre style.css */
+.version-info a {
+    color: #6c757d; /* Couleur discrète (gris) */
+    text-decoration: none;
+    font-size: 0.85em; /* Petite taille pour rester discret */
+}
+
+.version-info a:hover {
+    color: #007bff; /* Un petit changement de couleur au survol */
+    text-decoration: underline;
+}
+    </style>
 </body>
 </html>
