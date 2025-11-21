@@ -3,69 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎲 Qui Douille ?</title>
+    <title>🎲 KiDouille — Fin de Service</title>
     <link rel="icon" type="image/x-icon" href="img/logo.ico">
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
+
 <body>
-    <div class="container">
+    <div class="container retired">
         <img src="img/logo.png" alt="Logo" width="150px">
-        <h1>KiDouille ?</h1>
+        <h1>KiDouille</h1>
+
         <div class="update-banner">
-            🎉 <strong>KiDouille V2 est sortie !</strong><br>
-            Nouveau <em>Algo Douille™</em> : encore plus précis, encore plus chaotique,<br>
-            et surtout… encore plus de douille pour tout le monde. 😈
+            🎉 <strong>KiDouille V2 est maintenant sur LUMA !</strong><br>
+            Elle embarque le tout nouveau <em>Algo Douille™</em>,  
+            plus précis, plus chaotique… bref, la douille 2.0. 😈
         </div>
 
-        <p>Créer ou rejoindre une room pour savoir qui va douiller !</p>
+        <p class="retired-text">
+            Cette version du site est désormais <strong>obsolète</strong> et part en retraite 🧓✨.<br>
+            Pour profiter de la meilleure expérience (et des meilleures douilles),  
+            rejoins la nouvelle version sur LUMA :
+        </p>
 
-        <input type="text" id="playerName" placeholder="👋 Ton prénom" />
-        <input type="text" id="roomId" placeholder="🏠 Nom de la room" />
-        
-        <select id="reason">
-            <option value="le repas">🍽️ Le repas</option>
-            <option value="le ciné">🎬 Le ciné</option>
-            <option value="le bar">🍻 Le bar</option>
-            <option value="quelque chose d’autre">🤷‍♀️ Autre chose</option>
-        </select>
-        
-        <button onclick="enterRoom()">
-            <span class="icon">🚀</span> Entrer dans la room
-        </button>
+        <a href="https://mhemery.fr/luma/kidouille" class="cta">
+            🚀 Accéder à KiDouille V2 sur LUMA
+        </a>
     </div>
-    
-    <div id="versionInfo" class="version-info"></div>
 
-    <script>
-        function enterRoom() {
-            const n = document.getElementById("playerName").value.trim();
-            const r = document.getElementById("roomId").value.trim();
-            const s = document.getElementById("reason").value;
-
-            if (!n || !r) {
-                alert("Merci de remplir tous les champs !");
-                return;
-            }
-            window.location.href = `/room.html?room=${encodeURIComponent(r)}&name=${encodeURIComponent(n)}&reason=${encodeURIComponent(s)}`;
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9fa;
         }
 
-        // Script pour insérer la version
-        const appVersion = "1.3 - La Douille Flamboyante"; 
-        document.getElementById("versionInfo").textContent = appVersion;
-    </script>
-    <style>
+        .container.retired {
+            text-align: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 420px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
         .update-banner {
-            background: #fff3cd;
-            color: #856404;
+            background: #d1ecf1;
+            color: #0c5460;
             padding: 12px 18px;
             margin: 15px 0;
             border-radius: 10px;
             font-size: 0.9em;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
             animation: fadeIn 0.6s ease-out;
         }
-        
+
+        .retired-text {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .cta:hover {
+            background: #0056b3;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-5px); }
             to { opacity: 1; transform: translateY(0); }
